@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL USERS <DETAILs></DETAILs></title>
+    <style>
+        button{
+            background-color:grey;
+            color: black;
+        }
+
+       
+        
+        table,tr,td,th{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>ALL USERS:</h1>
+    
+    <form action="/user/add" ><button class="adduser">ADD USER</button></form>
+    <hr>
+<table>
+
+
+    <tr>
+ <th>user_id</th>
+    <th>user_name</th>
+    <th>user_email</th>
+    <th>user_phone</th>
+</tr>
+<%for(user of users){%>
+    <tr>
+        <td><%=user.id%></td>
+         <td><%=user.user_name%></td>
+          <td><%=user.email%></td>
+          <td><%=user.mob%></td>
+            <td><form method="get" action="/user/<%=user.id%>/edit">
+                <button>Edit Usename</button>
+            </form></td>
+             <td><form method="get" action="/user/<%=user.id%>/delete">
+                <button>DELETE USER</button>
+            </form></td>
+    </tr>
+<%}%>
+</table>
+
+</body>
+
+
+
+
+</html>

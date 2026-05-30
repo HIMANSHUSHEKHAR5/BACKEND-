@@ -1,0 +1,17 @@
+<%- include("includes/head.ejs")%>
+<body>
+    <h1 style="color:rgb(227, 13, 135);">  @ <%=data.name %></h1>
+    <button style="background-color: aqua; color: aliceblue;">Follow</button>
+    <button style="color: aqua; background-color: coral;">Message</button>
+    <p>followers:<%= data.followers %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;following:<%= data.following %></p>
+<hr/>
+
+<% for (let post of data.posts){ %>
+    <img src="<%= post.image %>" alt="image">
+    
+    <p>likes:<%= post.likes %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comments:<%= post.comments %></p>
+<% } %>
+
+</body>
+<script src="/script.js"></script>
+</html>
